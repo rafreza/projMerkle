@@ -10,8 +10,8 @@ function Home({isAuth}){
   useEffect(() => {
     const  getBlogs = async() =>{
       const data = await getDocs(postDB);
-      console.log(data.docs.map((doc) => ({...doc.data, id: doc.id})));
-      setBlogList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      console.log(data.docs.map((doc) => ({...doc.data, id: doc.id, name: doc.id.name})));
+      // setBlogList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getBlogs();
   });
