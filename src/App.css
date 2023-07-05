@@ -74,3 +74,62 @@ a {
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
   cursor: not-allowed;
 }
+
+.postPage {
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: grid;
+  place-items: center;
+}
+
+.pageContainer {
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  background-color: rgb(48, 83, 209);
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.pageContainer h1 {
+  text-align: center;
+}
+
+.pageContainer label {
+  font-size: 25px;
+}
+.pageContainer .inputContainer {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainer input,
+.inputContainer textarea {
+  font-size: 18px;
+  border: none;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.inputContainer input {
+  height: 40px;
+}
+.inputContainer textarea {
+  height: 150px;
+}
+
+.pageContainer button {
+  margin-top: 20px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+input,
+textarea {
+  margin-top: 5px;
+}
