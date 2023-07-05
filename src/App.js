@@ -4,7 +4,10 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from './components/Home';
 import Login from './components/Login';
 import Create from './components/Create';
+import { useState } from 'react';
+
 function App() {
+  const [isAuth, setIsAuth] = useState(false);
   return (
     <Router>
       <nav>
@@ -15,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/createpost" element={<Create />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setIsAuth={setIsAuth}/>} />
       </Routes>
     </Router>
   );
