@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../Firebase";
 import { useNavigate } from "react-router-dom";
 
-function Create(){
+function Create({isAuth}) {
 
   const [title, setTitle] = useState("");
   const [postContent, setContent] = useState("");
@@ -18,6 +18,12 @@ function Create(){
     });
     navigate('/');
   };
+
+  useEffect(() => {
+    if(!isAuth){
+      navigate('/Login');
+    }
+  })
 
   return (
 
@@ -38,6 +44,7 @@ function Create(){
           <textarea 
             placeholder="Write your heart out..."
             onChange={(event) => {
+              
               setContent(event.target.value);
               }}
           />
